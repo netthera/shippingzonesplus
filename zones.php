@@ -14,27 +14,6 @@
 
 include 'common.php';
 
-function fast_in_array($elem, $array)
-{
-   $top = sizeof($array) -1;
-   $top = sizeof($array);
-   $bot = 0;
-echo $elem;
-   while($top >= $bot)
-   {
-      $p = floor(($top + $bot) / 2);
-      if ($elem=='United States')
-      	echo $p.'-'.$elem.'-'.$array[$p].'<br>';
-      if ($array[$p]=='United States')
-      	echo $p.'-'.$elem.'-'.$array[$p].'<br>';
-      
-      
-      if ($array[$p] < $elem) $bot = $p + 1;
-      elseif ($array[$p] > $elem) $top = $p - 1;
-      else return TRUE;
-   }
-   return FALSE;
-} 
 if (!$user->is_logged_in())
 {
 	$_SESSION['REDIRECT_AFTER_LOGIN'] = 'zones.php';
